@@ -4,9 +4,9 @@ import {Hello} from "./HelloFunction";
 function App() {
   
   return (
-    <>
+    <div>
       <Hello/>
-    </>
+    </div>
   )
 }
 
