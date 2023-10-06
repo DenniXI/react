@@ -1,3 +1,8 @@
-export function Welcome(props){
-    return <p>Welcome, {props.name}!</p>
+export function Welcome({ name }) {
+    return (
+        <>
+            {name === "" && <p>Welcome, Ospite</p>}
+            {name && <p>Welcome, {name}!</p>}
+        </>
+    )
 }
