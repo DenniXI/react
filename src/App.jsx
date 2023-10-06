@@ -1,13 +1,7 @@
-import './App.css'
-import {Hello} from "./HelloFunction";
-
-function App() {
-  
-  return (
-    <div>
-      <Hello/>
-    </div>
-  )
+export function App(){
+    return (
+    <>
+        <h1>ciao</h1>
+    </>
+    )
 }
-
-export default App
