@@ -5,7 +5,7 @@ export function Welcome({ name, age }) {
         <>
             {name === "" && <p>Welcome,Ospite </p>}
             {name && <p>Welcome, {name}!</p>}
-            {age > 18 ? <Age age={age}/> : <p></p>}
+            {age ? <Age age={age}/> : <p></p>}
         </>
     )
 }
