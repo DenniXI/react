@@ -3,7 +3,7 @@ import {Welcome} from './Welcome'
 function App() {
   return (
     <>
-      <Welcome name={<strong>Elena</strong>} />
+      <Welcome name={<strong>Elena</strong>} age={67}/>
     </>
   )
 }
