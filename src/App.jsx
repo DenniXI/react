@@ -1,14 +1,5 @@
-import { AlertClock } from './AlertClock'
-import './App.css'
 
-function App() {
-  
-
-  return (
-    <>
-      <AlertClock />
-    </>
-  )
+export default function App({onClick}){
+    
+    return <button onClick={onClick}>Click to show the time</button>
 }
-
-export default App
