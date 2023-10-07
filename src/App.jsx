@@ -1,3 +1,4 @@
+import { AlertClock } from './AlertClock'
 import './App.css'
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-      
+      <AlertClock />
     </>
   )
 }
