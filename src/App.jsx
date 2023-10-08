@@ -1,5 +1,13 @@
+import './App.css'
+import { Counter } from './Counter'
 
-export default function App({onClick}){
-    
-    return <button onClick={onClick}>Click to show the time</button>
+function App() {
+
+  return (
+    <>
+      <Counter/>
+    </>
+  )
 }
+
+export default App
