@@ -1,15 +1,12 @@
 import { useState } from "react"
 
-export function Counter(){
-    const [counter, setCounter] = useState(0)
+export function Counter({initialValue = 0}){
+    const [counter, setCounter] = useState(initialValue)
 
     function handleIncrementCounter(){
-        //è meglio che sia scritta in questo modo per andare "sul sicuro" e perchè permette di inserire piu "setter".
         
-        // setCounter ((c) => c + 1)
+        setCounter((c) => c + 1)
         
-        //Altrimenti si puo scrivere cosi:
-        setCounter (counter + 1)
     }
 
     return (
