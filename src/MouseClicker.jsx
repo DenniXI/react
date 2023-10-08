@@ -4,6 +4,7 @@
 export function MouseClicker() {
     function handler(event) {
         console.log(event.target.src)
+        event.stopPropagation();
     }
 
     return (
