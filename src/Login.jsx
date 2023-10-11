@@ -10,7 +10,7 @@ export function Login(){
             <Username/>
             <Password/>
             <Checkbox/>
-            <button disabled={!value}>Login</button>
+            <button disabled={""}>Login</button>
         </div>
     )
 }
