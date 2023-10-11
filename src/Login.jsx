@@ -10,6 +10,7 @@ export function Login(){
             <Username/>
             <Password/>
             <Checkbox/>
+            <button disabled={!value}>Login</button>
         </div>
     )
 }
