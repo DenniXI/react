@@ -1,13 +1,14 @@
 import './App.css'
 
 function App() {
-  function helloName(name){
-    return <h1>Hello, {name}!</h1>
-  }
+  const Greeting = ({ name }) => {
+    return <h1>Hello, {name}!</h1>;
+  };
+  const hello = <strong>Gino</strong>
 
   return (
     <>
-      {helloName(<h1>GinoPaoli</h1>)}
+      <Greeting name={hello}/>
     </>
   )
 }
