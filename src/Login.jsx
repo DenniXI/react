@@ -25,21 +25,29 @@ export function Login() {
             }
         })
     }
+
     function handleReset() {
         setData(createData())
     }
 
+    function handleLogin(event) {
+        event.preventDefault();
+        console.log(data.username, data.password, data.session)
+    }
 
     return (
         <div>
-            <h2>Username</h2>
-            <input name="username" value={data.username} onChange={handleChange} />
-            <h2>Password</h2>
-            <input name="password" value={data.password} onChange={handleChange} />
-            <h2>Remember</h2>
-            <input name="session" type="checkbox" checked={data.session} onChange={handleChange} />
-            <button disabled={!data.username || !data.password}>Login</button>
-            <button onClick={handleReset}>Reset</button>
+            <form action="#" onSubmit={handleLogin}>
+                <h2>Username</h2>
+                <input name="username" value={data.username} onChange={handleChange} />
+                <h2>Password</h2>
+                <input name="password" value={data.password} onChange={handleChange} />
+                <h2>Remember</h2>
+                <input name="session" type="checkbox" checked={data.session} onChange={handleChange} />
+                <button disabled={!data.username || !data.password}>Login</button>
+                <button onClick={handleReset}>Reset</button>
+            </form>
+
         </div>
     )
 }
