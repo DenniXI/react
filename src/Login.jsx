@@ -2,25 +2,25 @@ export function Login() {
     function handleFormSubmit(event) {
         event.preventDefault()
 
-        //Questo è uno dei metodi per accedere al valore corrente di username e password (e anche della checkbox)
-        // const username = event.target.elements.namedItem('username').value;
-        // const password = event.target.elements.namedItem('password').value;
-        // const session = event.target.elements.namedItem('session').checked;
-        // const data = {
-        //     username,
-        //     password,
-        //     session,
+        //Questo è il metodo standard per accedere ai valori del form:
+        // const formData = {
+        //     username: event.target.username.value,
+        //     password: event.target.password.value,
+        //     session: event.target.session.checked
         // }
-        // console.log(data)
 
-        //Questo è un altro metodo:
-        const formData = new FormData(event.target)
-        const data = {
-            username: formData.get('username'),
-            password: formData.get('password'),
-            session: formData.get('session'),
-        }
-        console.log(data)
+        //Questo è un metodo non standard
+        // const formData = new FormData(event.target)
+        // const username =  formData.get('username');
+        // const password = formData.get('password');
+        // const session = formData.get('session');
+        
+
+        const formData = {
+            username: document.forms[0].elements.username.value,
+            password: document.forms[0].elements.password.value,
+        };
+        console.log(formData)
     }
     return (
         <div>
