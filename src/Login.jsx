@@ -1,20 +1,8 @@
+import { FocusableInput } from "./FocusableInput";
+
 export function Login() {
     function handleFormSubmit(event) {
         event.preventDefault()
-
-        //Questo è il metodo standard per accedere ai valori del form:
-        // const formData = {
-        //     username: event.target.username.value,
-        //     password: event.target.password.value,
-        //     session: event.target.session.checked
-        // }
-
-        //Questo è un metodo non standard
-        // const formData = new FormData(event.target)
-        // const username =  formData.get('username');
-        // const password = formData.get('password');
-        // const session = formData.get('session');
-        
 
         const formData = {
             username: document.forms[0].elements.username.value,
