@@ -12,7 +12,11 @@ function App() {
   return (
     <>
       <Counter/>
-      <Colors color={['giallo', 'arancione', 'verde', 'rosso']}/>
+      <Colors items={[
+        {id: 1, name: 'yellow'},
+        {id: 2, name: 'black'},
+        {id: 3, name: 'gray'},
+      ]}/>
     </>
   )
 }

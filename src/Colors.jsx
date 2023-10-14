@@ -1,10 +1,17 @@
-export function Colors({color}){
+function Color({item}){
+    return(
+        <li>{item.name}</li>
+    )
+}
+
+
+export function Colors({items}){
 
     return (
         <>
             <ul>
-                {color.map((itemColor)=> (
-                    <li>{itemColor}</li>
+                {items.map((item)=> (
+                    <Color key={item.id} item={item}/>
                 ))}
             </ul>
         </>
