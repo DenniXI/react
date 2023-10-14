@@ -22,6 +22,10 @@ export function TodoList() {
         })
         setInput('')
     }
+
+    function handleReset(){
+        setItems(['prova 1', 'prova 2'])
+    }
     return (
         <>
             <h4>To do List</h4>
@@ -32,6 +36,7 @@ export function TodoList() {
             </ul>
             <input type="text" value={input} onChange={handleInputValue} />
             <button onClick={handleAdd}>Add</button>
+            <button onClick={handleReset}>Reset</button>
         </>
     )
 }
