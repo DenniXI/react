@@ -26,14 +26,22 @@ export function TodoList() {
     function handleReset(){
         setItems(['prova 1', 'prova 2'])
     }
+
+    function handleRemove(index){
+        setItems(items.filter((_, i)=> i !== index));
+    }
     return (
         <>
             <h4>To do List</h4>
             <ul>
-                {items.map((item)=>(
-                    <li>{item}</li>
+                {items.map((item, index)=>(
+                    <li key={index}>
+                        {item} 
+                    <button onClick={()=>handleRemove(index)}>Remove</button>
+                    </li>
                 ))}
             </ul>
+            
             <input type="text" value={input} onChange={handleInputValue} />
             <button onClick={handleAdd}>Add</button>
             <button onClick={handleReset}>Reset</button>
