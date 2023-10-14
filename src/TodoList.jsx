@@ -20,6 +20,7 @@ export function TodoList() {
         setItems((items)=>{
             return [...items, input]
         })
+        setInput('')
     }
     return (
         <>
