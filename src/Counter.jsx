@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
 export function Counter({ initialValue = 0 }) {
+    //Styling
+    const style = {
+        backgroundColor: 'gray',
+        color: 'white',
+        border: '1px solid black'
+    }
+    //End Styling
     const [counter, setCounter] = useState(initialValue);
     const prevRef = useRef(initialValue);
     const directionRef = useRef('');
@@ -32,7 +39,7 @@ export function Counter({ initialValue = 0 }) {
     }
 
     return (
-        <div>
+        <div style={style}>
             <h2>Counter: {counter}</h2>
             <button onClick={handleIncrementCounter}>+1</button>
             <button onClick={handleDecrementCounter}>-1</button>
