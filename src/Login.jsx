@@ -9,7 +9,7 @@ function createData() {
     }
 }
 
-export function Login() {
+export function Login({log}) {
     const [data, setData] = useState(createData())
 
     function handleChange(event) {
@@ -27,6 +27,11 @@ export function Login() {
         })
     }
 
+    function handleLog(){
+        log(data)
+    }
+    
+
 
     return (
         <div>
@@ -36,7 +41,7 @@ export function Login() {
             <input name="password" value={data.value} onChange={handleChange} />
             <h2>Remember</h2>
             <input name="checkbox" type="checkbox" value={data.checked} onChange={handleChange} />
-            <button disabled={!data.username || !data.password}>Login</button>
+            <button disabled={!data.username || !data.password} onClick={handleLog}>Login</button>
         </div>
     )
 }
