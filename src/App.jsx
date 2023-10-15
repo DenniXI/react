@@ -16,6 +16,7 @@ function App() {
       <h2>Try to Styling</h2>
       <Welcome value={'ospite'}/>
       <Counter/>
+      <Login/>
       <Colors items={[
         {id: 1, name: 'yellow'},
         {id: 2, name: 'black'},
