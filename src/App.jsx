@@ -14,7 +14,7 @@ function App() {
 
 
   return (
-    <Container title={"Title of container"}>
+    <Container title={<h1>"Title of container"</h1>}>
 
       <h2>Try to Styling</h2>
 
