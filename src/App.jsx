@@ -14,8 +14,10 @@ function App() {
 
 
   return (
-    <Container>
+    <Container title={"Title of container"}>
+
       <h2>Try to Styling</h2>
+
       <Welcome value={'ospite'} />
       <Counter />
       <Login />

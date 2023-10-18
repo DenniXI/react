@@ -1,8 +1,9 @@
-export function Container({children}){
+export function Container({title, children}){
 
     return (
         <div className="container">
-            <h1>Questo è il mio container</h1>
+            <h1>{title}</h1>
+            <h2>Questo è il mio container</h2>
             <div>
                 {children}
             </div>
