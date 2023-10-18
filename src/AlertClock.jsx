@@ -1,16 +1,12 @@
-import App from './App'
-import './App.css'
 
-function AlertClock() {
-  function handleButtonClick() {
-    const time = new Date()
-    alert(`The current time is: ${time.toLocaleTimeString()}`)
-  }
-  return (
-    <>
-      <App onClick={handleButtonClick} />
-    </>
-  )
+
+
+export function AlertClock({event}){
+  // function handleButtonClick(){
+  //     const time = new Date()
+  //     alert(`The current time is: ${time.toLocaleTimeString()}`)
+  // }
+
+
+  return <button onClick={event}>Click to show the time</button>
 }
-
-export default AlertClock
