@@ -3,7 +3,8 @@ import { AlertClock } from './AlertClock'
 import { Container } from './Container'
 import { LanguageContext } from './LanguageContext'
 import { useState } from 'react'
-import  {GitHubUser}  from './GitHubUser'
+import { GitHubUser } from './GitHubUser'
+import { GitHubUsers } from './GitHubUsers'
 
 function App() {
   const [language, setLanguage] = useState('it')
@@ -18,7 +19,8 @@ function App() {
         <option value='it'>Italiano</option>
         <option value='en'>Inglese</option>
       </select>
-      <GitHubUser username={'DenniXI'}/>
+      <GitHubUser />
+      <GitHubUsers />
       <LanguageContext.Provider value={language}>
         <AlertClock />
       </LanguageContext.Provider>
