@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from "react";
+import { useCounter } from "./UseCounter";
 
-export function Counter({ initialValue = 0 }) {
+export function Counter({ initialValue = 0}) {
     //Styling
+
     const style = {
         backgroundColor: 'gray',
         color: 'white',
         border: '1px solid black'
     }
+
     //End Styling
-    const [counter, setCounter] = useState(initialValue);
+    const {counter, onIncrement, onDecrement, onReset} = useCounter(initialValue)
     const prevRef = useRef(initialValue);
     const directionRef = useRef('');
 
@@ -28,22 +31,14 @@ export function Counter({ initialValue = 0 }) {
         }
         
     }, [counter])
-    function handleIncrementCounter() {
-        setCounter((c) => c + 1)
-    }
-    function handleDecrementCounter() {
-        setCounter((c) => c - 1)
-    }
-    function resetCounter() {
-        setCounter((c) => initialValue)
-    }
+    
 
     return (
         <div style={style}>
             <h2>Counter: {counter}</h2>
-            <button onClick={handleIncrementCounter}>+1</button>
-            <button onClick={handleDecrementCounter}>-1</button>
-            <button onClick={resetCounter}>Reset</button>
+            <button onClick={onIncrement}>+1</button>
+            <button onClick={onDecrement}>-1</button>
+            <button onClick={onReset}>Reset</button>
         </div>
     )
 }
