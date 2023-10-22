@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 export function useGithubUser(username){
     const [user, setUser] = useState(null)
-
+    
 
     useEffect(() => {
         async function fetchGit() {

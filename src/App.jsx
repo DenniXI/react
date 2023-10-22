@@ -1,25 +1,23 @@
-import './index.css'
-import { AlertClock } from './AlertClock'
-import { Container } from './Container'
-import { LanguageContext } from './LanguageContext'
-import { useState } from 'react'
-import { GitHubUser } from './GitHubUser'
-import { GitHubUsers } from './GitHubUsers'
-import { Counter } from './Counter'
-import { ControlledForm } from './ControlledForm'
+import React from 'react';
+import {useCurrentLocation} from './UseCurrentLocation';
 
 function App() {
-  // const [language, setLanguage] = useState('it')
-
-  // function handleLanguage(event) {
-  //   setLanguage(event.target.value)
-  // }
+  const { location, error, loading, getCurrentLocation } = useCurrentLocation();
 
   return (
     <div>
-      <GitHubUser username='DenniXI'/>
+      <h1>Current Location</h1>
+      {loading && <p>Loading...</p>}
+      {error && <p>Error: {error.message}</p>}
+      {location && (
+        <div>
+          <p>Latitude: {location.latitude}</p>
+          <p>Longitude: {location.longitude}</p>
+        </div>
+      )}
+      <button onClick={getCurrentLocation}>Get Current Location</button>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
