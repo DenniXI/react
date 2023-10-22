@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div>
-      <ControlledForm />
+      <GitHubUser username='DenniXI'/>
     </div>
   )
 }
