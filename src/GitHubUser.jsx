@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react";
 import { useGithubUser } from "./UseGithubUser";
-import { useCurrentLocation } from "./UseCurrentLocation";
 
 export function GitHubUser({ username }) {
-    const {user} = useGithubUser(username)
-    const {location, error, loading, getCurrentLocation} = useCurrentLocation({})
+    const { user, loading, error, fetchGit } = useGithubUser(username)
 
-    if (!user) {
-        return <h1>{loading}...</h1>;
-    } else {
-        return (
-            <div>
-                <h1>{location}</h1>
-                <h2>{user.name}</h2>
-                <h2>{user.login}</h2>
-                <img src={user.avatar_url}/>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <button onClick={fetchGit}>Fetch dei dati</button>
+            {loading && <p>Loading...</p>}
+            {error && <p>Error: {error.message}</p>}
+
+            {user && (
+                <div>
+                    <h1>{user.name}</h1>
+                    <h2>{user.login}</h2>
+                    <img src={user.avatar_url} />
+                </div>
+            )}
+
+        </div>
+    )
 }
