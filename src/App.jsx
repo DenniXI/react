@@ -1,22 +1,14 @@
 import React from 'react';
+import {Routes, Route} from "react-router-dom"
 import {useCurrentLocation} from './UseCurrentLocation';
+import { Welcome } from './Welcome';
 
 function App() {
-  const { location, error, loading, getCurrentLocation } = useCurrentLocation();
 
   return (
-    <div>
-      <h1>Current Location</h1>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error.message}</p>}
-      {location && (
-        <div>
-          <p>Latitude: {location.latitude}</p>
-          <p>Longitude: {location.longitude}</p>
-        </div>
-      )}
-      <button onClick={getCurrentLocation}>Get Current Location</button>
-    </div>
+    <Routes>
+      <Route path='/' element={<Welcome/>}/>
+    </Routes>
   );
 }
 

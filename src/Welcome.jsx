@@ -1,4 +1,4 @@
-export function Welcome({value}){
+export function Welcome({value = "Jimmy"}){
 
     return(
         <div className="welcome">
