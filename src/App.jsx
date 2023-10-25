@@ -3,6 +3,8 @@ import {Routes, Route} from "react-router-dom"
 import {useCurrentLocation} from './UseCurrentLocation';
 import { Welcome } from './Welcome';
 import {Counter} from './Counter'
+import { GitHubUser } from './GitHubUser';
+import { ShowGithubUser } from './ShowGithubUser';
 
 function App() {
 
@@ -10,6 +12,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Welcome/>}/>
       <Route path='/Counter' element={<Counter/>}/>
+      <Route path='users/:username' element={<ShowGithubUser/>}/>
     </Routes>
   );
 }
