@@ -5,6 +5,8 @@ import { Welcome } from './Welcome';
 import { Counter } from './Counter'
 import { GitHubUser } from './GitHubUser';
 import { ShowGithubUser } from './ShowGithubUser';
+import { TodoList } from './TodoList';
+import { GitHubUsersList } from './GitHubUserList';
 
 function App() {
 
@@ -14,12 +16,15 @@ function App() {
         <Route path='*' element={<h1>Path Not Found</h1>} />
         <Route path='/' element={<Welcome />} />
         <Route path='/Counter' element={<Counter />} />
-        <Route path='users/:username' element={<ShowGithubUser />} />
+        <Route path='/users' element={<GitHubUsersList/>}/>
+        <Route path='/users/:username' element={<ShowGithubUser/>}/>
+        
+          
       </Routes>
       <div>
         <Link to='/'>Welcome</Link> |
         <Link to='/Counter'>Counter</Link> |
-        <Link to='users/:username'>User</Link>
+        <Link to='users'>Users</Link>
       </div>
 
     </div>
