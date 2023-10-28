@@ -1,12 +1,16 @@
 import App from "./App";
 import React from 'react';
-import {BrowserRouter} from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
+import { SWRConfig } from "swr";
 
-export function Root(){
+export function Root() {
 
-    return(
-        <BrowserRouter>
-            <App/>
-        </BrowserRouter>
+    return (
+        <SWRConfig>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </SWRConfig>
+
     )
 }

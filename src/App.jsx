@@ -1,11 +1,8 @@
 import React from 'react';
 import { Routes, Route, Link } from "react-router-dom"
-import { useCurrentLocation } from './UseCurrentLocation';
 import { Welcome } from './Welcome';
 import { Counter } from './Counter'
-import { GitHubUser } from './GitHubUser';
 import { ShowGithubUser } from './ShowGithubUser';
-import { TodoList } from './TodoList';
 import { GitHubUsersList } from './GitHubUserList';
 
 function App() {
