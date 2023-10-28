@@ -1,11 +1,8 @@
 import React from 'react';
 import { Routes, Route, Link } from "react-router-dom"
-import { useCurrentLocation } from './UseCurrentLocation';
 import { Welcome } from './Welcome';
 import { Counter } from './Counter'
-import { GitHubUser } from './GitHubUser';
 import { ShowGithubUser } from './ShowGithubUser';
-import { TodoList } from './TodoList';
 import { GitHubUsersList } from './GitHubUserList';
 
 function App() {
@@ -14,9 +11,13 @@ function App() {
     <div>
       <Routes>
         <Route path='*' element={<h1>Path Not Found</h1>} />
-        <Route path='/' element={<Welcome />} />
+        <Route path='/' element={<Welcome />} >
+          <Route index={true} element={<h1>Insert a User</h1>}/>
+        </Route>
         <Route path='/Counter' element={<Counter />} />
-        <Route path='/users' element={<GitHubUsersList/>}/>
+        <Route path='/users' element={<GitHubUsersList/>}>
+          
+        </Route>
         <Route path='/users/:username' element={<ShowGithubUser/>}/>
         
           
