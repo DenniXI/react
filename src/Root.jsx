@@ -5,8 +5,9 @@ import { SWRConfig } from "swr";
 
 export function Root() {
 
+    const fetcher = (url) => fetch(url).then ((response)=>response.json())
     return (
-        <SWRConfig>
+        <SWRConfig value={{fetcher}}>
             <BrowserRouter>
                 <App />
             </BrowserRouter>
