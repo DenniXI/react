@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useGithubUser } from "./UseGithubUser";
 
 export function GitHubUser({ username }) {
-    const { user, loading, error, fetchGit } = useGithubUser(username)
+    const { user, loading, error, refetchData } = useGithubUser(username)
 
     return (
         <div>
-            <button onClick={fetchGit}>Fetch dei dati</button>
+            <button onClick={refetchData}>Refetch dei dati</button>
             {loading && <p>Loading...</p>}
             {error && <p>Error: {error.message}</p>}
 

@@ -9,10 +9,16 @@ export function useGithubUser(username) {
     const { data, error } = useSWR(
         shouldFetch ? `https://api.github.com/users/${username}` : null, fetcher
         );
-    
+        
+        function refetchData(){
+            if(shouldFetch){
+                mutate()
+            }
+        }
     return { 
         user: data, 
         error, 
         isLoading: shouldFetch && !data && !error,
+        refetchData,
     }
 }
