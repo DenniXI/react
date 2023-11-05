@@ -9,24 +9,24 @@ function App() {
 
   return (
     <div>
-      <Routes>
-        <Route path='*' element={<h1>Path Not Found</h1>} />
-        <Route path='/' element={<Welcome />} >
-          <Route index={true} element={<h1>Insert a User</h1>}/>
-        </Route>
-        <Route path='/Counter' element={<Counter />} />
-        <Route path='/users' element={<GitHubUsersList/>}>
-          
-        </Route>
-        <Route path='/users/:username' element={<ShowGithubUser/>}/>
-        
-          
-      </Routes>
       <div>
-        <Link to='/'>Welcome</Link> |
-        <Link to='/Counter'>Counter</Link> |
-        <Link to='users'>Users</Link>
+        <Link to='/'>Show Welcome</Link> |
+        <Link to='/Counter'>Show Counter</Link> |
+        <Link to='users'>Show Users</Link>
       </div>
+
+      <Routes>
+        <Route path='/' element={<Welcome />} />
+        <Route path='/Counter' element={<Counter />} />
+        <Route path='users' element={<GitHubUsersList />}>
+          <Route index element={<h3>Add a user and select it</h3>}/>
+          <Route path=':username' element={<ShowGithubUser />} />
+        </Route>
+        <Route path='*' element={<h1>Path Not Found</h1>} />
+
+
+      </Routes>
+
 
     </div>
   );
